@@ -6,7 +6,7 @@ namespace Components
     /// <summary>
     /// ECS component
     /// </summary>
-    public struct PersonTagStruct : IComponentData
+    public struct PersonTagData : IComponentData
     {
         
     }
@@ -30,7 +30,7 @@ namespace Components
             var entity = GetEntity(TransformUsageFlags.Dynamic);
             
             // Add ECS component to that entity
-            AddComponent(entity, new PersonTagStruct
+            AddComponent(entity, new PersonTagData
             {
                 
             });

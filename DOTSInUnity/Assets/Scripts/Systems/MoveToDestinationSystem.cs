@@ -1,3 +1,5 @@
+using Components;
+using Jobs;
 using Unity.Burst;
 using Unity.Entities;
 using Unity.Mathematics;
@@ -16,16 +18,13 @@ namespace Systems
         [BurstCompile]
         public void OnUpdate(ref SystemState state)
         {
-            float deltaTime = SystemAPI.Time.DeltaTime;
-
-            foreach (var transform in SystemAPI.Query<RefRW<LocalTransform>>())
+            var job = new MoveToDestinationJob
             {
-                // Forward direction in local space (z axis)
-                float3 forward = math.mul(transform.ValueRO.Rotation, new float3(0, 0, 1));
-
-                // Move forward in world space
-                transform.ValueRW.Position += forward * deltaTime;
-            }
+                DeltaTime = SystemAPI.Time.DeltaTime
+            };
+            
+            // Parallel schedule across chunks/threads
+            state.Dependency = job.ScheduleParallel(state.Dependency);
         }
 
         [BurstCompile]

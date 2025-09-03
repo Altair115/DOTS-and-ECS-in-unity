@@ -7,7 +7,7 @@ namespace Components
     /// <summary>
     /// ECS component
     /// </summary>
-    public struct MovementSpeedStruct : IComponentData
+    public struct MovementSpeedData : IComponentData
     {
         public float Value;
     }
@@ -31,7 +31,7 @@ namespace Components
             var entity = GetEntity(TransformUsageFlags.Dynamic);
 
             // Add ECS component to that entity
-            AddComponent(entity, new MovementSpeedStruct
+            AddComponent(entity, new MovementSpeedData
             {
                 Value = authoring.Value
             });

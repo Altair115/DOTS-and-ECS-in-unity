@@ -7,7 +7,7 @@ namespace Components
     /// <summary>
     /// ECS component
     /// </summary>
-    public struct DestinationStruct : IComponentData
+    public struct DestinationData : IComponentData
     {
         public float3 Value;
     }
@@ -31,7 +31,7 @@ namespace Components
             var entity = GetEntity(TransformUsageFlags.Dynamic);
 
             // Add ECS component to that entity
-            AddComponent(entity, new DestinationStruct
+            AddComponent(entity, new DestinationData
             {
                 Value = authoring.Value
             });

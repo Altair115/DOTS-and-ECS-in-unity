@@ -235,7 +235,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffd540248ad2458cb268b0429e8493e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Components.MovementSpeed
-  Value: 5
+  Value: 2.5
 --- !u!114 &148210931
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -249,9 +249,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Components.DestinationAuthoring
   Value:
-    x: 1
+    x: -7
     y: 0
-    z: 1
+    z: -1
 --- !u!1 &308576947
 GameObject:
   m_ObjectHideFlags: 0
@@ -263,6 +263,9 @@ GameObject:
   - component: {fileID: 308576950}
   - component: {fileID: 308576949}
   - component: {fileID: 308576948}
+  - component: {fileID: 308576951}
+  - component: {fileID: 308576953}
+  - component: {fileID: 308576952}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -341,6 +344,47 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &308576951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 308576947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f409a5dfaa2dc13429306b5e75b70949, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Components.Destination
+  Value:
+    x: 10
+    y: 0
+    z: 5
+--- !u!114 &308576952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 308576947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8762d67464bc4fc0910cd6e5e2fd00dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Components.PersonTag
+--- !u!114 &308576953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 308576947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffd540248ad2458cb268b0429e8493e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Components.MovementSpeed
+  Value: 2
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
