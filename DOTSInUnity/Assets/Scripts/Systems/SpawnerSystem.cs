@@ -56,7 +56,12 @@ namespace Systems
                     ecb.SetComponent(instance, LocalTransform.FromPositionRotationScale(
                         position, quaternion.identity, 1f));
 
-                    // Keep the prefab's DestinationData as-is (DO NOT set it here)
+                    
+                    uint seed = 1u + (uint)(x * 73856093) ^ (uint)(z * 19349663);
+                    // Your prefab likely doesn't have RandomData yet → Add it
+                    ecb.AddComponent(instance, new RandomData { Rng = Random.CreateFromIndex(seed) });
+                    
+                    ecb.SetComponent(instance, new DestinationData { Value = position });
 
                     // Override ONLY the speed the prefab already has
                     // (Use SetComponent because MovementSpeedData exists on the prefab)
