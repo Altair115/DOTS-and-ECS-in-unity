@@ -1,13 +1,9 @@
-﻿using Unity.Entities;
-using Unity.Mathematics;
+using Unity.Entities;
 using UnityEngine;
 
 namespace Components
 {
-    /// <summary>
-    /// ECS component
-    /// </summary>
-    public struct MovementSpeedData : IComponentData
+    public struct LifetimeData : IComponentData
     {
         public float Value;
     }
@@ -15,7 +11,7 @@ namespace Components
     /// <summary>
     /// Authoring MonoBehaviour (shows in inspector)
     /// </summary>
-    public class MovementSpeed : MonoBehaviour
+    public class Lifetime : MonoBehaviour
     {
         public float value;
     }
@@ -23,15 +19,15 @@ namespace Components
     /// <summary>
     /// Baker converts the authoring MonoBehaviour to ECS component
     /// </summary>
-    public class MovementSpeedBaker : Baker<MovementSpeed>
+    public class LifetimeBaker : Baker<Lifetime>
     {
-        public override void Bake(MovementSpeed authoring)
+        public override void Bake(Lifetime authoring)
         {
             // Get the entity associated with this GameObject
             var entity = GetEntity(TransformUsageFlags.Dynamic);
 
             // Add ECS component to that entity
-            AddComponent(entity, new MovementSpeedData
+            AddComponent(entity, new LifetimeData
             {
                 Value = authoring.value
             });

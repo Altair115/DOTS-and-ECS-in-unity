@@ -13,6 +13,8 @@ namespace Components
         public int    Spread;
         /// <summary>x = min speed, y = max speed.</summary>
         public float2 SpeedRange;
+        /// <summary>x = min lifetime, y = max lifetime.</summary>
+        public float2 LifetimeRange;
     }
 
     /// <summary>Tag to ensure we spawn only once.</summary>

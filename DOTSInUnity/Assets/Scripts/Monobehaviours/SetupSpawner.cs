@@ -11,12 +11,14 @@ namespace Monobehaviours
         [SerializeField] private int gridSize = 5;
         [SerializeField] private int spread = 3;
         [SerializeField] private Vector2 speedRange = new Vector2(4f, 7f);
+        [SerializeField] private Vector2 lifetimeRange = new Vector2(10f, 60f);
         
         // Public getters for the baker
         public GameObject PersonPrefab => personPrefab;
         public int GridSize => gridSize;
         public int Spread => spread;
         public float2 SpeedRange => new float2(speedRange.x, speedRange.y);
+        public float2 LifetimeRange => new float2(lifetimeRange.x, lifetimeRange.y);
     }
     
     /// <summary>Bakes authoring → ECS runtime data (runs during Baking).</summary>
@@ -35,7 +37,8 @@ namespace Monobehaviours
                 Prefab = prefabEntity,
                 GridSize = authoring.GridSize,
                 Spread = authoring.Spread,
-                SpeedRange = authoring.SpeedRange
+                SpeedRange = authoring.SpeedRange,
+                LifetimeRange = authoring.LifetimeRange
             });
             // Don't add SpawnerInitialized here — the system will tag it after it spawns.
         }

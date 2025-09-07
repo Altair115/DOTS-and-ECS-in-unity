@@ -106,6 +106,7 @@ GameObject:
   - component: {fileID: 8518735428422861721}
   - component: {fileID: 6199551067018264258}
   - component: {fileID: 5402111370120423810}
+  - component: {fileID: 6162258080976788428}
   m_Layer: 0
   m_Name: Person
   m_TagString: Untagged
@@ -197,7 +198,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f409a5dfaa2dc13429306b5e75b70949, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Components.DestinationAuthoring
-  Value:
+  value:
     x: 0
     y: 0
     z: 0
@@ -213,7 +214,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffd540248ad2458cb268b0429e8493e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Components.MovementSpeed
-  Value: 0
+  value: 0
 --- !u!114 &2222767575864964000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -433,3 +434,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Unity.Entities.Graphics::Unity.Rendering.URPMaterialPropertyBaseColorAuthoring
   color: {r: 1, g: 0.7877358, b: 0.7877358, a: 0}
+--- !u!114 &6162258080976788428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4279669560427043075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33bfc23de482f8744b425a6a44fa9b1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Components.Lifetime
+  value: 0

@@ -17,7 +17,7 @@ namespace Components
     /// </summary>
     public class Destination : MonoBehaviour
     {
-        public float3 Value;
+        public float3 value;
     }
     
     /// <summary>
@@ -33,7 +33,7 @@ namespace Components
             // Add ECS component to that entity
             AddComponent(entity, new DestinationData
             {
-                Value = authoring.Value
+                Value = authoring.value
             });
         }
     }

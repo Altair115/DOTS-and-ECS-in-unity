@@ -44,6 +44,8 @@ namespace Systems
                 int spread = spawner.Spread;
                 float speedMin = spawner.SpeedRange.x;
                 float speedMax = spawner.SpeedRange.y;
+                float lifetimeMin = spawner.LifetimeRange.x;
+                float lifetimeMax = spawner.LifetimeRange.y;
 
                 for (int x = 0; x < gridSize; x++)
                 for (int z = 0; z < gridSize; z++)
@@ -62,9 +64,10 @@ namespace Systems
                     ecb.AddComponent(instance, new RandomData { Rng = Random.CreateFromIndex(seed) });
                     
                     ecb.SetComponent(instance, new DestinationData { Value = position });
-
-                    // Override ONLY the speed the prefab already has
-                    // (Use SetComponent because MovementSpeedData exists on the prefab)
+                    
+                    float randomLifetime = rng.NextFloat(lifetimeMin, lifetimeMax);
+                    ecb.SetComponent(instance, new LifetimeData { Value = randomLifetime } );
+                    
                     float randomSpeed = rng.NextFloat(speedMin, speedMax);
                     ecb.SetComponent(instance, new MovementSpeedData { Value = randomSpeed });
                 }
